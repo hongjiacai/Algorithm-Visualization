@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://test-jiacai.rhcloud.com/sort/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Sorting Algorithm Visualization</title>
+<script src="./Sorting Algorithm Visualization_files/main.js"></script>
+<link rel="stylesheet" type="text/css" href="./Sorting Algorithm Visualization_files/index.css">
+<link rel="stylesheet" type="text/css" href="./Sorting Algorithm Visualization_files/main.css">
+</head>
+<body onload="load()">
+
+<div class="parent">
+   <div class="children2" id="tit">
+       <p class="title">Sorting Algorithm Visualization</p>
+   </div>
+    <div class="card rich-card children" z="3" id="canvas" style="left: 300px;">
+       <canvas id="myCanvas" width="900px" height="500px"></canvas>
+   </div>
+   <div class="button-set-1">
+       <button class="button raised bg-blue-500 color-white" id="0" onclick="changeAlgorithm(0)" style="background: rgb(0, 191, 165);">Insertion</button>
+       <button class="button raised bg-blue-500 color-white" id="1" onclick="changeAlgorithm(1)" style="background: rgb(33, 150, 243);">Bubble</button>
+       <button class="button raised bg-blue-500 color-white" id="2" onclick="changeAlgorithm(2)" style="background: rgb(33, 150, 243);">Selection</button>
+       <button class="button raised bg-blue-500 color-white" id="3" onclick="changeAlgorithm(3)" style="background: rgb(33, 150, 243);">Shell</button>
+       <button class="button raised bg-blue-500 color-white" id="4" onclick="changeAlgorithm(4)" style="background: rgb(33, 150, 243);">Merge</button>
+       <button class="button raised bg-blue-500 color-white" id="5" onclick="changeAlgorithm(5)" style="background: rgb(33, 150, 243);">Quick</button>
+       <button class="button raised bg-blue-500 color-white" id="6" onclick="changeAlgorithm(6)" style="background: rgb(33, 150, 243);">Heap</button>
+   </div>
+   <div class="button-set-2">
+       <input type="range" class="slider" min="1" max="10" id="ran" value="6" onclick="changeSpeed()">
+   </div>
+   <div class="button-set-3">
+       <button class="button raised" id="10" onclick="changeSize(0)" style="background: rgb(223, 223, 223);">5</button>
+       <button class="button raised" id="11" onclick="changeSize(1)" style="background: rgb(223, 223, 223);">10</button>
+       <button class="button raised" id="12" onclick="changeSize(2)" style="background: rgb(223, 223, 223);">50</button>
+       <button class="button raised" id="13" onclick="changeSize(3)" style="background: rgb(0, 191, 165);">100</button>
+       <button class="button raised" id="14" onclick="changeSize(4)" style="background: rgb(223, 223, 223);">150</button>
+   </div>
+   <div class="button-set-4">
+        <button class="button raised" onclick="restart()">Restart</button>
+   </div>
+  
+   <div class="card rich-card related" z="3" id="rel">
+       <p>相关链接<a style="float:right;color:red;" href="javascript:close()">关闭</a></p>
+       <a href="http://www.cs.usfca.edu/~galles/visualization/Algorithms.html">Data Structure Visualizations</a><br>
+       <a href="http://jsdo.it/norahiko/oxIy">ソートアルゴリズムを映像化してみた</a>
+   </div>
+</div>
+
+
+</body></html>

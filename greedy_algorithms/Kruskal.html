@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Kruskal Minimum Cost Spanning Tree</title>
+    <link href="../font.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../material.min.css">
+</head>
+<body onload="load()" style="margin:0;min-height: 98% !important;">
+<div style="margin: 8px;padding: 8px;">
+    <div>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="runKruskal()">
+            Run Kruskal
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="newGraph()">
+            New Graph
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored" style="margin-left: 30px"
+                onclick="refresh()" title="play from start">
+            <i class="material-icons">refresh</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored"
+                onclick="rewind()" id="btn_rewind" title="step back">
+            <i class="material-icons" id="rewind">fast_rewind</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored"
+                onclick="play()" id="btn_play" title="play/pause">
+            <i class="material-icons" id="play">play_arrow</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored"
+                onclick="forward()" id="btn_forward" title="step forward">
+            <i class="material-icons">fast_forward</i>
+        </button>
+        <p style="width:200px;display:inline-block;" title="如果速度异常请重新点击">
+            <label>Animation Speed
+                <input class="mdl-slider mdl-js-slider" type="range" id="speed" min="0" max="4" value="2" onclick="changeSpeed()"/>
+            </label>
+        </p>
+    </div>
+    <canvas id="myCanvas"></canvas>
+    <script>
+        document.getElementById('myCanvas').width  = window.innerWidth-32;
+        document.getElementById('myCanvas').height = window.innerHeight-120;
+    </script>
+</div>
+<script src="../common/step.js"></script>
+<script src="Kruskal_animation.js"></script>
+<script src="../common/base_play_control.js"></script>
+<script src="Kruskal_addon.js"></script>
+<script src="../material.min.js"></script>
+</body>
+</html>

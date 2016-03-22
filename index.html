@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms</title>
+    <link href="font.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="material.min.css">
+    <style>
+        .drawer-separator {
+            height: 1px;
+            background-color: #dcdcdc;
+            margin: 8px 0;
+        }
+        .mdl-navigation__link{
+            font-size: 18px !important;
+            padding: 12px 40px !important;
+        }
+        span.mdl-navigation__link{
+            color:#3f51b5 !important;
+            margin-left:-25px !important;
+        }
+        a.mdl-navigation__link{
+            cursor:pointer !important;
+        }
+        .list>li{
+            font-size: 20px;
+        }
+        .list>li>ul>li{
+            font-size: 18px;
+            cursor: pointer;
+            color:#00BCD4;
+        }
+    </style>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title" id="title">
+                算法
+            </span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Right aligned menu below button -->
+            <button id="menu-lower-right"
+                    class="mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">more_vert</i>
+            </button>
+
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-lower-right">
+                <li class="mdl-menu__item" style="font-size: 18px;" onclick="contact()">报错</li>
+                <li class="mdl-menu__item" style="font-size: 18px;" onclick="contact()">联系</li>
+            </ul>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer" id="drawer">
+        <span class="mdl-layout-title" style="background: #3f51b5;color: #FFFFFF;padding-top: 40px;">算法</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" onclick="shouye()">首页</a>
+            <div class="drawer-separator"></div>
+            <span class="mdl-navigation__link">排序算法</span>
+            <a class="mdl-navigation__link" onclick="change('排序算法','排序算法','sort/Sorting Algorithm Visualization.html')">排序算法</a>
+            <div class="drawer-separator"></div>
+            <span class="mdl-navigation__link">分治法</span>
+            <a class="mdl-navigation__link" onclick="change('分治法','第k小项','divide_and_conquer/kth.html')">第k小项</a>
+            <div class="drawer-separator"></div>
+            <span class="mdl-navigation__link">动态规划</span>
+            <a class="mdl-navigation__link" onclick="change('动态规划','最长公共子序列','dynamic_programming/LCS.html')">最长公共子序列</a>
+            <div class="drawer-separator"></div>
+            <span class="mdl-navigation__link">贪心算法</span>
+            <a class="mdl-navigation__link" onclick="change('贪心算法','Dijkstra最短路径','greedy_algorithms/Dijkstra.html')">Dijkstra最短路径</a>
+            <a class="mdl-navigation__link" onclick="change('贪心算法','Kruskal最小生成树','greedy_algorithms/Kruskal.html')">Kruskal最小生成树</a>
+            <a class="mdl-navigation__link" onclick="change('贪心算法','Prim最小生成树','greedy_algorithms/Prim.html')">Prim最小生成树</a>
+            <div class="drawer-separator"></div>
+            <span class="mdl-navigation__link">回溯法</span>
+            <a class="mdl-navigation__link" onclick="change('回溯法','N皇后问题','back_tracking/N_queens.html')">N皇后问题</a>
+            <div class="drawer-separator"></div>
+            <span class="mdl-navigation__link">相关链接</span>
+            <a class="mdl-navigation__link" href="http://www.cs.usfca.edu/~galles/visualization/Algorithms.html" target="_blank">Data Structure Visualization</a>
+            <div class="drawer-separator"></div>
+        </nav>
+    </div>
+    <main class="mdl-layout__content">
+        <div class="page-content">
+            <!-- Your content goes here -->
+            <div style="position:absolute;margin-left:2%;margin-top:10px;" id="index">
+                <ul class="list">
+                    <li>排序算法
+                        <ul>
+                            <li onclick="change('排序算法','排序算法','sort/Sorting Algorithm Visualization.html')">排序算法</li>
+                        </ul>
+                    </li>
+                    <li>分治法
+                        <ul>
+                            <li onclick="change('分治法','第k小项','divide_and_conquer/kth.html')">第k小项</li>
+                        </ul>
+                    </li>
+                    <li>动态规划
+                        <ul>
+                            <li onclick="change('动态规划','最长公共子序列','dynamic_programming/LCS.html')">最长公共子序列</li>
+                        </ul>
+                    </li>
+                    <li>贪心算法
+                        <ul>
+                            <li onclick="change('贪心算法','Dijkstra最短路径','greedy_algorithms/Dijkstra.html')">Dijkstra最短路径</li>
+                            <li onclick="change('贪心算法','Kruskal最小生成树','greedy_algorithms/Kruskal.html')">Kruskal最小生成树</li>
+                            <li onclick="change('贪心算法','Prim最小生成树','greedy_algorithms/Prim.html')">Prim最小生成树</li>
+                        </ul>
+                    </li>
+                    <li>回溯法
+                        <ul>
+                            <li onclick="change('回溯法','N皇后问题','back_tracking/N_queens.html')">N皇后问题</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div  style="position:absolute;margin-left:2%;margin-top:10px;visibility:hidden;" id="contact">
+                <p style="font-size: 18px;">如有任何问题，可发送邮件到 1074097851@qq.com</p>
+            </div>
+            <iframe src="" id="frame" class="mdl-card mdl-shadow--4dp" style="visibility:hidden;position:absolute;width:96%;margin-left:2%;margin-top:10px;height:0;"></iframe>
+            <script>
+                document.getElementById('frame').setAttribute("style","visibility:hidden;position:absolute;width:96%;margin-left:2%;margin-top:10px;height:"+(window.innerHeight-84)+'px;');
+                function change(chap, algorithm, src){
+                    document.getElementById("frame").style.visibility="visible";
+                    document.getElementById("index").style.visibility="hidden";
+                    document.getElementById("contact").style.visibility="hidden";
+
+                    document.getElementById('frame').setAttribute('src', src);
+                    document.getElementById('title').innerHTML=chap +" > "+algorithm;
+                    document.getElementById('drawer').setAttribute('class', 'mdl-layout__drawer');
+                }
+                function shouye(){
+                    document.getElementById("frame").style.visibility="hidden";
+                    document.getElementById("index").style.visibility="visible";
+                    document.getElementById("contact").style.visibility="hidden";
+
+                    document.getElementById('title').innerHTML="算法";
+                    document.getElementById('drawer').setAttribute('class', 'mdl-layout__drawer');
+                }
+                function contact(){
+                    document.getElementById("frame").style.visibility="hidden";
+                    document.getElementById("index").style.visibility="hidden";
+                    document.getElementById("contact").style.visibility="visible";
+                }
+            </script>
+         </div>
+    </main>
+</div>
+<script src="material.min.js"></script>
+</body>
+</html>
